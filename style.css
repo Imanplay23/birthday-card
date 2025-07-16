@@ -1,0 +1,103 @@
+body {
+  background: linear-gradient(135deg, #ffe8ec, #fffcf2);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  width: 360px;
+  height: 450px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.front, .inside {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.8s;
+}
+
+.front {
+  background-color: #ff80ab;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inside {
+  background-color: #fffde7;
+  color: #333;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.card.open .front {
+  transform: rotateY(180deg);
+}
+
+.card.open .inside {
+  transform: rotateY(360deg);
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ffcc80;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ffb74d;
+}
+
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.card.open .inside {
+  animation: bounceIn 0.9s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.7) rotateY(180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) rotateY(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotateY(180deg);
+  }
+}
+
+.front h1 {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

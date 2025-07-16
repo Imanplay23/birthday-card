@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Feliz Cumpleaños!</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer=""></script> car
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <audio id="celebration-sound" src="short-crowd-cheer-6713.mp3"></audio>
+</head>
+<body>
+  <div class="card">
+    <div class="front">
+      <h1>¡Feliz Cumpleaños!🎉</h1>
+      <button onclick="openCard()">Abrir Tarjeta</button>
+    </div>
+    <div class="inside">
+      <h2>Para mi amiga especial 💖</h2>
+      <p>
+        Hoy es un día muy especial porque celebra la vida de alguien increíble... <br><br>
+        Gracias por existir y por hacer el mundo más bonito con tu sonrisa 😊 <br><br>
+        ¡Espero que tengas un cumple lleno de alegría, amor y muchas risas!
+      </p>
+      <h3>✨ Con cariño, Imanol ✨</h3>
+      <button onclick="closeCard()">Cerrar</button>
+    </div>
+  </div>
+  <canvas id="confetti-canvas"></canvas>
+</body>
+</html>
